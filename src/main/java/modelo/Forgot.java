@@ -11,13 +11,14 @@ public class Forgot extends JFrame implements ActionListener{
     private JPanel contentPane;
     private JTextField t1,t2,t3,t4,t5;
     private JButton b1,b2,b3;
+    
 
     public static void main(String[] args) {
 	new Forgot().setVisible(true);
     }
 
     public Forgot() {
-
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(500, 200, 650, 500);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

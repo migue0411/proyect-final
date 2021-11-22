@@ -23,6 +23,7 @@ public class Signup extends JFrame implements ActionListener{
     }
 
     public Signup() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(600, 250, 606, 406);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

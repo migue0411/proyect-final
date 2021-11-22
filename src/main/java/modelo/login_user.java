@@ -35,7 +35,7 @@ public class login_user extends JFrame implements ActionListener{
 
 
 	public login_user() {
-            
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setBackground(new Color(200, 100, 200));	
         setBounds(600, 300, 600, 400);
 		
