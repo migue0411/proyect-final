@@ -16,7 +16,7 @@ public class Login {
     }
     
     //metodos internenos
-    private boolean checkData(){
+    private boolean checkData(){//verificar datos 
         
         return false; 
     }
