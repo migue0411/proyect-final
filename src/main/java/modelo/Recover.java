@@ -20,6 +20,7 @@ public class Recover {
         propiedad.setProperty("mail.smtp.port", "587");
         propiedad.setProperty("mail.smtp.auth", "true");
         Session sesion = Session.getDefaultInstance(propiedad);
+        //String correo 
         
     }
 }
