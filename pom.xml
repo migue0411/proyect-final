@@ -16,6 +16,12 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE125</version>
         </dependency>
+        <dependency>
+            <groupId>JavaMail</groupId>
+            <artifactId>JavaMail</artifactId>
+            <version>1.4.7</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
