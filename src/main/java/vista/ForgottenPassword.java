@@ -4,6 +4,11 @@
  */
 package vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 
 /**
  *
@@ -29,16 +34,16 @@ public class ForgottenPassword extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        campo_nuevaContraseña = new javax.swing.JPasswordField();
+        campo_nuevaContraseña2 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        campo_Correo = new javax.swing.JTextField();
+        bt_Enviar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        campo_Codigo = new javax.swing.JTextField();
+        bt_Confirmar = new javax.swing.JButton();
+        lb_errorCorreo = new javax.swing.JLabel();
+        lb_errorContrasenias = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(214, 226, 248));
@@ -51,29 +56,29 @@ public class ForgottenPassword extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("* Repetir Contraseña");
 
-        jPasswordField1.setText("jPasswordField1");
+        campo_nuevaContraseña.setText("jPasswordField1");
 
-        jPasswordField2.setText("jPasswordField2");
+        campo_nuevaContraseña2.setText("jPasswordField2");
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("* Correo");
 
-        jTextField1.setText("correo@gmail.com");
+        campo_Correo.setText("correo@gmail.com");
 
-        jButton1.setText("Enviar");
+        bt_Enviar.setText("Enviar");
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("* Codigo ");
 
-        jTextField2.setText("123456789");
+        campo_Codigo.setText("123456789");
 
-        jButton2.setText("Confirmar");
+        bt_Confirmar.setText("Confirmar");
 
-        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel5.setText("* El correo no es valio, Intentelo de nuevo");
+        lb_errorCorreo.setForeground(new java.awt.Color(255, 51, 51));
+        lb_errorCorreo.setText("* El correo no es valio, Intentelo de nuevo");
 
-        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel6.setText("* Las contraseña no coinciden, Intentelo de nuevo ");
+        lb_errorContrasenias.setForeground(new java.awt.Color(255, 51, 51));
+        lb_errorContrasenias.setText("* Las contraseña no coinciden, Intentelo de nuevo ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -82,27 +87,27 @@ public class ForgottenPassword extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
+                    .addComponent(lb_errorContrasenias)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton2)
-                        .addComponent(jButton1)
+                        .addComponent(bt_Confirmar)
+                        .addComponent(bt_Enviar)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1))
+                            .addComponent(campo_Correo))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(campo_nuevaContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campo_nuevaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lb_errorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(26, Short.MAX_VALUE))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
@@ -112,47 +117,74 @@ public class ForgottenPassword extends javax.swing.JPanel {
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_Correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
-                .addComponent(jLabel5)
+                .addComponent(lb_errorCorreo)
                 .addGap(7, 7, 7)
-                .addComponent(jButton1)
+                .addComponent(bt_Enviar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_nuevaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_nuevaContraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(lb_errorContrasenias)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(bt_Confirmar)
                 .addGap(59, 59, 59))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getBt_Confirmar() {
+        return bt_Confirmar;
+    }
+
+    public JButton getBt_Enviar() {
+        return bt_Enviar;
+    }
+
+    public JTextField getCampo_Codigo() {
+        return campo_Codigo;
+    }
+
+    public JTextField getCampo_Correo() {
+        return campo_Correo;
+    }
+
+    public JPasswordField getCampo_nuevaContraseña2() {
+        return campo_nuevaContraseña2;
+    }
+
+    public JLabel getLb_errorContrasenias() {
+        return lb_errorContrasenias;
+    }
+
+    public JLabel getLb_errorCorreo() {
+        return lb_errorCorreo;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton bt_Confirmar;
+    private javax.swing.JButton bt_Enviar;
+    private javax.swing.JTextField campo_Codigo;
+    private javax.swing.JTextField campo_Correo;
+    private javax.swing.JPasswordField campo_nuevaContraseña;
+    private javax.swing.JPasswordField campo_nuevaContraseña2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lb_errorContrasenias;
+    private javax.swing.JLabel lb_errorCorreo;
     // End of variables declaration//GEN-END:variables
 }

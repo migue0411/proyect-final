@@ -10,5 +10,15 @@ package modelo;
  */
 
 public class Login {
+    //metodos publicos
+    public void log_User(String User,String password){
+        //
+    }
+    
+    //metodos internenos
+    private boolean checkData(){
+        
+        return false; 
+    }
     
 }
