@@ -53,11 +53,4 @@ System.out.println("usuario no valido");
         return false; 
     }
     
-
-
-     
-  	public static void main(String[] args) {
-              Login Login=new Login();
-	}
-        
 }
