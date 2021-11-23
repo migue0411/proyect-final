@@ -4,13 +4,15 @@
  */
 package Main;
 
+import Controlador.Interactividad;
+
 /**
  *
  * @author alexa
  */
 public class Main {
     public static void main(String []args){
-
+        new Interactividad();
     }
 
 }
