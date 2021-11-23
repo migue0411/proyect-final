@@ -52,20 +52,24 @@ public class ForgottenPassword extends javax.swing.JPanel {
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(340, 465));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("* Nueva Contraseña");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("* Repetir Contraseña");
 
         campo_nuevaContraseña.setText("jPasswordField1");
 
         campo_nuevaContraseña2.setText("jPasswordField2");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("* Correo");
 
         campo_Correo.setText("correo@gmail.com");
 
         bt_Enviar.setText("Enviar");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("* Codigo ");
 
         campo_Codigo.setText("123456789");
@@ -73,10 +77,10 @@ public class ForgottenPassword extends javax.swing.JPanel {
         bt_Confirmar.setText("Confirmar");
 
         lb_errorCorreo.setForeground(new java.awt.Color(255, 51, 51));
-        lb_errorCorreo.setText("* El correo no es valio, Intentelo de nuevo");
+        lb_errorCorreo.setText("* El correo no es valido, Intentelo de nuevo.");
 
         lb_errorContrasenias.setForeground(new java.awt.Color(255, 51, 51));
-        lb_errorContrasenias.setText("* Las contraseña no coinciden, Intentelo de nuevo ");
+        lb_errorContrasenias.setText("* Las contraseña no coinciden, Intentelo de nuevo. ");
 
         bt_cancelar.setText("Cancelar");
 
@@ -107,7 +111,7 @@ public class ForgottenPassword extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lb_errorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
