@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelo;
-import java.sql.*;  
+import java.sql.*;
+
 /**
  *
  * @author alexa

@@ -48,22 +48,16 @@ public class LoginFrame extends javax.swing.JFrame {
         setResizable(false);
 
         capaBase.setBackground(new java.awt.Color(118, 160, 238));
-        capaBase.setForeground(new java.awt.Color(0, 0, 0));
 
         loginPanel.setBackground(new java.awt.Color(214, 226, 248));
         loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        loginPanel.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario:");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña: ");
 
         bt_ingresar.setText("Ingresar");
 
-        bt_recuperar.setBackground(new java.awt.Color(214, 226, 248));
-        bt_recuperar.setForeground(new java.awt.Color(0, 0, 0));
         bt_recuperar.setText("Recuperar Contraseña");
         bt_recuperar.setBorderPainted(false);
         bt_recuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -105,26 +99,26 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(bt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(bt_recuperar)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout capaBaseLayout = new javax.swing.GroupLayout(capaBase);
         capaBase.setLayout(capaBaseLayout);
         capaBaseLayout.setHorizontalGroup(
             capaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(capaBaseLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capaBaseLayout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
         );
         capaBaseLayout.setVerticalGroup(
             capaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capaBaseLayout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,6 +148,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     public JButton getBt_crear() {
         return bt_crear;
+        
     }
 
     public JButton getBt_ingresar() {

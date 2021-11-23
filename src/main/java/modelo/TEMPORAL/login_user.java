@@ -143,9 +143,6 @@ public class login_user extends JFrame implements ActionListener{
 		forgot.setVisible(true);
             }
         }
-        
-  	public static void main(String[] args) {
-                new login_user().setVisible(true);
-	}
-
 }
+        
+  	

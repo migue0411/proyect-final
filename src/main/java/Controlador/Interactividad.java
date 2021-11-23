@@ -21,6 +21,7 @@ public class Interactividad {
     private LoginFrame frame = new LoginFrame();
     private SingUp crearCuenta = new SingUp();
     private ForgottenPassword recuperarContrasenia = new ForgottenPassword();
+    
     //
     private Point LocationPanels = frame.getLoginPanelLocation();
     //
@@ -28,6 +29,8 @@ public class Interactividad {
         crearCuenta.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 340, 465);
         recuperarContrasenia.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 340, 465);
         this.loginFrame_Interaction();
+        
+       
         
     }
     
@@ -53,10 +56,18 @@ public class Interactividad {
         frame.getBt_recuperar().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.getLoginPanel().setVisible(false);
+                recuperarContrasenia.setVisible(true);
+                frame.getCapaBase().add(recuperarContrasenia);
+               frame.revalidate();
+               
                 
             }
             
         });
+        
+        
+        
     }
     
 }
