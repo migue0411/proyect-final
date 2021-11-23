@@ -9,6 +9,7 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.ForgottenPassword;
+import vista.Home;
 import vista.LoginFrame;
 import vista.SingUp;
 
@@ -21,6 +22,7 @@ public class Interactividad {
     private LoginFrame frame = new LoginFrame();
     private SingUp crearCuenta = new SingUp();
     private ForgottenPassword recuperarContrasenia = new ForgottenPassword();
+    private Home homeFrame = new Home();
     
     //
     private Point LocationPanels = frame.getLoginPanelLocation();
@@ -50,7 +52,8 @@ public class Interactividad {
         frame.getBt_ingresar().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Posteriormente se implementara el frame de ingreso");
+                frame.setVisible(false);
+                homeFrame.setVisible(true);
             }    
         });
         frame.getBt_recuperar().addActionListener(new ActionListener(){
