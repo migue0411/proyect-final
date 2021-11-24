@@ -17,7 +17,6 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
- 
     }
 
     /**
@@ -32,6 +31,7 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("home");
         setBounds(0,0,(int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+        setExtendedState(6);
         setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
         setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
         setSize(new java.awt.Dimension(1366, 768));
