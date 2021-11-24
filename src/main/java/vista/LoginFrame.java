@@ -23,7 +23,6 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
-        System.out.println(this.loginPanel.getSize());
     }
 
     /**

@@ -46,10 +46,8 @@ public class Recover {
             
         } catch (AddressException ex) {
             Logger.getLogger(Recover.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("hola1");
         } catch(MessagingException ex){
             Logger.getLogger(Recover.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("hola2");
         }
     }
     
