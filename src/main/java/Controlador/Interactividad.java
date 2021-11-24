@@ -28,8 +28,8 @@ public class Interactividad {
     private Point LocationPanels = frame.getLoginPanelLocation();
     //
     public Interactividad(){
-        crearCuenta.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 340, 465);
-        recuperarContrasenia.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 340, 465);
+        crearCuenta.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 343, 469);
+        recuperarContrasenia.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 343, 469);
         this.loginFrame_Interaction();
         
        

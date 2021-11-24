@@ -23,6 +23,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
+        System.out.println(this.loginPanel.getSize());
     }
 
     /**
@@ -103,7 +104,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(bt_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt_recuperar)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout capaBaseLayout = new javax.swing.GroupLayout(capaBase);
@@ -118,7 +119,7 @@ public class LoginFrame extends javax.swing.JFrame {
         capaBaseLayout.setVerticalGroup(
             capaBaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, capaBaseLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
