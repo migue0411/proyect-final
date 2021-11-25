@@ -18,7 +18,7 @@ public class SingleConnection{
     private SingleConnection(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql:///proyectofinal","root","Jasr1234.");
+            conexion = DriverManager.getConnection("jdbc:mysql:///proyectofinal","root","");
         }catch(Exception e){
             System.out.println(e.getStackTrace());
         }
@@ -34,5 +34,4 @@ public class SingleConnection{
     public Connection getConection(){
         return this.conexion;
     }
-    
 }

@@ -28,34 +28,27 @@ public class Login {
     private String contrasenaCorreoEmpresa = "123456j.";
 
     //metodos publicos
-    public boolean log_User(String User,String password){//lanzará un booleano que indicara si el login se ha hecho correctamente
+    public boolean log_User(String correo,String password){//lanzará un booleano que indicara si el login se ha hecho correctamente
        //se establece la conexion 
        Connection conexion = SingleConnection.getSingleConnection().getConection();
-       String SQL = "select * from account where username=? and password=?";
-        try {
-            PreparedStatement statement = conexion.prepareStatement(SQL);
-            statement.setString(1,User);
+       String SQL = "select * from account where correo=? and password=?";
+       PreparedStatement statement = null;
+       ResultSet resultset = null;
+       try {
+            statement = conexion.prepareStatement(SQL);
+            statement.setString(1,correo);
             statement.setString(2,password);
-            ResultSet resultset = statement.executeQuery();
-            
-            while(resultset.next()){
-                
+            resultset = statement.executeQuery();
+            if(resultset.next()){
+                resultset.close();
+                return true;
             }
-
-            
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         return false;
     }
          
-          
-    
-    
-    //metodos internenos
-    private boolean checkData(){//verificar datos 
-        
-        return false; 
-    }
     
 }

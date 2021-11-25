@@ -5,6 +5,10 @@
 package modelo;
 
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,8 +27,34 @@ import javax.mail.internet.MimeMessage;
 public class Recover {
     private String correoEmpresa = "correopruebaboda@gmail.com";
     private String contrasenaCorreoEmpresa = "123456j.";
+    private String recoveryCode = "";
     
-    public void sendRecoverCode(String correoDestinatario) throws MessagingException{
+    private boolean checkEmail(String correo){
+        Connection conexion = SingleConnection.getSingleConnection().getConection();
+        String SQL = "select * from account where correo=?";
+        PreparedStatement statement = null;
+        ResultSet resultset = null;
+        try {
+            statement = conexion.prepareStatement(SQL);
+            statement.setString(1,correo);
+            resultset = statement.executeQuery();
+            
+            if(resultset.next()){
+                resultset.close();
+                return true;//el correo existe
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Recover.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;//el correo no existes
+    }
+    
+    public boolean sendRecoverCode(String correoDestinatario) throws MessagingException{
+        if(!checkEmail(correoDestinatario)){
+            return false;//el correo no existe, no se puede enviar codigo de recuperacion
+        }
+        System.out.println("hola");
         Properties propiedad = new Properties();
         propiedad.setProperty("mail.smtp.host", "smtp.gmail.com");
         propiedad.setProperty("mail.smtp.starttls.enable", "true");
@@ -39,7 +69,7 @@ public class Recover {
             mail.addRecipient(Message.RecipientType.TO, new InternetAddress(correoDestinatario));
             mail.setSubject(asunto);
             mail.setText(codigo);
-            Transport transporte = sesion.getTransport();
+            Transport transporte = sesion.getTransport("smtp");
             transporte.connect(correoEmpresa,contrasenaCorreoEmpresa);
             transporte.sendMessage(mail,mail.getRecipients(Message.RecipientType.TO));
             transporte.close();
@@ -49,9 +79,10 @@ public class Recover {
         } catch(MessagingException ex){
             Logger.getLogger(Recover.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return true;
     }
     
-    private static String generateCode(){
+    private String generateCode(){
         //generar un codigo de 9 numeros
         int codigo = (int)(Math.random()*1000000000);
         if(codigo <= 1000000000){
@@ -62,6 +93,11 @@ public class Recover {
                 }
             }
         }
-        return String.valueOf(codigo);
+        recoveryCode = String.valueOf(codigo);
+        return recoveryCode;
+    }
+    
+    public String getRecoveryCode(){
+        return this.recoveryCode;
     }
 }

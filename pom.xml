@@ -17,10 +17,9 @@
             <version>RELEASE125</version>
         </dependency>
         <dependency>
-            <groupId>JavaMail</groupId>
-            <artifactId>JavaMail</artifactId>
-            <version>1.4.7</version>
-            <type>jar</type>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
         </dependency>
     </dependencies>
     <properties>

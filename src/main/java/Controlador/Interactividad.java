@@ -8,7 +8,12 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
+import javax.swing.JButton;
 import modelo.Login;
+import modelo.Recover;
 import vista.ForgottenPassword;
 import vista.Home;
 import vista.LoginFrame;
@@ -25,6 +30,7 @@ public class Interactividad {
     private ForgottenPassword recuperarContrasenia = new ForgottenPassword();
     private Home homeFrame = new Home();
     private Login login = new Login();
+    private Recover recuperar = new Recover();
     
     //
     private Point LocationPanels = frame.getLoginPanelLocation();
@@ -33,9 +39,7 @@ public class Interactividad {
         crearCuenta.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 343, 469);
         recuperarContrasenia.setBounds((int)LocationPanels.getX(),(int)LocationPanels.getY(), 343, 469);
         this.loginFrame_Interaction();
-        
-       
-        
+        this.recoveryMethod(); 
     }
     
     private void loginFrame_Interaction(){
@@ -57,25 +61,44 @@ public class Interactividad {
                 if(login.log_User(frame.getCampo_Usuario().getText(), String.valueOf(frame.getCampo_contrasenia().getPassword()))){
                     frame.setVisible(false);
                     homeFrame.setVisible(true); 
-                }
-                
+                }    
             }    
         });
         frame.getBt_recuperar().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.getLoginPanel().setVisible(false);
-                recuperarContrasenia.setVisible(true);
-                frame.getCapaBase().add(recuperarContrasenia);
-               frame.revalidate();
-               
-                
+                frame.getLoginPanel().setVisible(false);//panel de login 
+                recuperarContrasenia.setVisible(true);//vista
+                frame.getCapaBase().add(recuperarContrasenia);//se le añade a la capa base otro panel 
+                frame.revalidate();
+            }
+            
+        });
+    }
+    private void recoveryMethod(){
+        recuperarContrasenia.getBt_Enviar().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if(!recuperar.sendRecoverCode(recuperarContrasenia.getCampo_Correo().getText())){
+                        System.out.println("No se pudo enviar el codigo de recuperacion, ingrese un correo valido");
+                    }
+                } catch (MessagingException ex) {
+                    Logger.getLogger(Interactividad.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+        });
+        recuperarContrasenia.getBt_verficarCodigo().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(recuperarContrasenia.getCampo_Codigo().equals(recuperar.getRecoveryCode())){
+                    recuperarContrasenia.getCampo_nuevaContrasenia1().setEditable(true);
+                    recuperarContrasenia.getCampo_nuevaContrasenia2().setEditable(true);
+                }
             }
             
         });
         
-        
-        
     }
-    
 }

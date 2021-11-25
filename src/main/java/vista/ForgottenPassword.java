@@ -47,6 +47,7 @@ public class ForgottenPassword extends javax.swing.JPanel {
         lb_errorContrasenias = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         bt_cancelar = new javax.swing.JButton();
+        bt_verificarCodigo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(214, 226, 248));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -84,13 +85,26 @@ public class ForgottenPassword extends javax.swing.JPanel {
 
         bt_cancelar.setText("Cancelar");
 
+        bt_verificarCodigo.setText("Verificar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bt_Confirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(bt_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(97, 97, 97))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_verificarCodigo)
                     .addComponent(lb_errorContrasenias)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(bt_Enviar)
@@ -112,13 +126,6 @@ public class ForgottenPassword extends javax.swing.JPanel {
                             .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lb_errorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(23, Short.MAX_VALUE))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(bt_Confirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(bt_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(97, 97, 97))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,9 +142,11 @@ public class ForgottenPassword extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt_verificarCodigo)
+                .addGap(7, 7, 7)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(campo_nuevaContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -165,7 +174,11 @@ public class ForgottenPassword extends javax.swing.JPanel {
     public JButton getBt_Enviar() {
         return bt_Enviar;
     }
-
+    
+    public JButton getBt_verficarCodigo(){
+        return this.bt_verificarCodigo;
+    }
+    
     public JTextField getCampo_Codigo() {
         return campo_Codigo;
     }
@@ -173,8 +186,10 @@ public class ForgottenPassword extends javax.swing.JPanel {
     public JTextField getCampo_Correo() {
         return campo_Correo;
     }
-
-    public JPasswordField getCampo_nuevaContraseña2() {
+    public JPasswordField getCampo_nuevaContrasenia1(){
+        return this.campo_nuevaContraseña;
+    }
+    public JPasswordField getCampo_nuevaContrasenia2() {
         return campo_nuevaContraseña2;
     }
 
@@ -193,6 +208,7 @@ public class ForgottenPassword extends javax.swing.JPanel {
     private javax.swing.JButton bt_Confirmar;
     private javax.swing.JButton bt_Enviar;
     private javax.swing.JButton bt_cancelar;
+    private javax.swing.JButton bt_verificarCodigo;
     private javax.swing.JTextField campo_Codigo;
     private javax.swing.JTextField campo_Correo;
     private javax.swing.JPasswordField campo_nuevaContraseña;
