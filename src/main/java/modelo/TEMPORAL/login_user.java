@@ -112,7 +112,6 @@ public class login_user extends JFrame implements ActionListener{
         
         public void actionPerformed(ActionEvent ae){
             if(ae.getSource() == b1){
-                Boolean status = false;
 		try {
                     conn con = new conn();
                     String sql = "select * from account where username=? and password=?";

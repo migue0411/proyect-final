@@ -11,6 +11,12 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,31 +24,30 @@ import java.awt.event.ActionListener;
  */
 
 public class Login {
-      private String correoEmpresa = "correopruebaboda@gmail.com";
-        private String contrasenaCorreoEmpresa = "123456j.";
+    private String correoEmpresa = "correopruebaboda@gmail.com";
+    private String contrasenaCorreoEmpresa = "123456j.";
 
     //metodos publicos
-    public void log_User(String User,String password){
-        
-         
-         
-    
-         JFrame uno=new JFrame();
-          
-         
-         String user1="123";
+    public boolean log_User(String User,String password){//lanzará un booleano que indicara si el login se ha hecho correctamente
+       //se establece la conexion 
+       Connection conexion = SingleConnection.getSingleConnection().getConection();
+       String SQL = "select * from account where username=? and password=?";
+        try {
+            PreparedStatement statement = conexion.prepareStatement(SQL);
+            statement.setString(1,User);
+            statement.setString(2,password);
+            ResultSet resultset = statement.executeQuery();
+            
+            while(resultset.next()){
+                
+            }
 
-
-if (user1.equals(password)){
-
-
-System.out.println("usuario valido");
-}else{
-
-JOptionPane.showMessageDialog(uno,"USUARIO NO VALIDO","ERROR",JOptionPane.ERROR_MESSAGE);
-System.out.println("usuario no valido");
-}
-}
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
          
           
     

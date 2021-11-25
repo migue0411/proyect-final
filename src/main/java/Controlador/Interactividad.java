@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.Login;
 import vista.ForgottenPassword;
 import vista.Home;
 import vista.LoginFrame;
@@ -23,6 +24,7 @@ public class Interactividad {
     private SingUp crearCuenta = new SingUp();
     private ForgottenPassword recuperarContrasenia = new ForgottenPassword();
     private Home homeFrame = new Home();
+    private Login login = new Login();
     
     //
     private Point LocationPanels = frame.getLoginPanelLocation();
@@ -52,8 +54,11 @@ public class Interactividad {
         frame.getBt_ingresar().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                homeFrame.setVisible(true);
+                if(login.log_User(frame.getCampo_Usuario().getText(), String.valueOf(frame.getCampo_contrasenia().getPassword()))){
+                    frame.setVisible(false);
+                    homeFrame.setVisible(true); 
+                }
+                
             }    
         });
         frame.getBt_recuperar().addActionListener(new ActionListener(){
