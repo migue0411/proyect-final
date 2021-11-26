@@ -22,6 +22,8 @@ public class ForgottenPassword extends javax.swing.JPanel {
      */
     public ForgottenPassword() {
         initComponents();
+        this.lb_errorContrasenias.setVisible(false);
+        this.lb_errorCorreo.setVisible(false);
     }
 
     /**
@@ -59,23 +61,24 @@ public class ForgottenPassword extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("* Repetir Contraseña");
 
-        campo_nuevaContraseña.setText("jPasswordField1");
+        campo_nuevaContraseña.setForeground(new java.awt.Color(0, 0, 0));
+        campo_nuevaContraseña.setEnabled(false);
 
-        campo_nuevaContraseña2.setText("jPasswordField2");
+        campo_nuevaContraseña2.setForeground(new java.awt.Color(0, 0, 0));
+        campo_nuevaContraseña2.setEnabled(false);
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("* Correo");
-
-        campo_Correo.setText("correo@gmail.com");
 
         bt_Enviar.setText("Enviar");
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("* Codigo ");
 
-        campo_Codigo.setText("123456789");
+        campo_Codigo.setEnabled(false);
 
         bt_Confirmar.setText("Confirmar");
+        bt_Confirmar.setEnabled(false);
 
         lb_errorCorreo.setForeground(new java.awt.Color(255, 51, 51));
         lb_errorCorreo.setText("* El correo no es valido, Intentelo de nuevo.");
@@ -86,6 +89,7 @@ public class ForgottenPassword extends javax.swing.JPanel {
         bt_cancelar.setText("Cancelar");
 
         bt_verificarCodigo.setText("Verificar");
+        bt_verificarCodigo.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -123,7 +127,7 @@ public class ForgottenPassword extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campo_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lb_errorCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
