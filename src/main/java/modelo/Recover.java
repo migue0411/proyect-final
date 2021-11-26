@@ -54,7 +54,6 @@ public class Recover {
         if(!checkEmail(correoDestinatario)){
             return false;//el correo no existe, no se puede enviar codigo de recuperacion
         }
-        System.out.println("hola");
         Properties propiedad = new Properties();
         propiedad.setProperty("mail.smtp.host", "smtp.gmail.com");
         propiedad.setProperty("mail.smtp.starttls.enable", "true");
@@ -101,8 +100,19 @@ public class Recover {
         return this.recoveryCode;
     }
     
-    public void changePassword(String password){
+    public void changePassword(String correo,String password){
         //se debe actualizar la contraseña de la base de datos en este metodo
+        String SQL = "UPDATE account SET password=? WHERE correo=?";
+        PreparedStatement statement = null;
+        ResultSet resultset = null;
+        try {
+            statement = conexion.prepareStatement(SQL);
+            statement.setString(1, password);
+            statement.setString(2, correo);
+            statement.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Recover.class.getName()).log(Level.SEVERE, null, ex);
+        }   
     }
-    
 }
