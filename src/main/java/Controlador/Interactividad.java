@@ -129,7 +129,11 @@ public class Interactividad {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(String.valueOf(recoveryView.getCampo_nuevaContrasenia1().getPassword()).equals(String.valueOf(recoveryView.getCampo_nuevaContrasenia2().getPassword()))){
-                    recuperar.changePassword(String.valueOf(recoveryView.getCampo_nuevaContrasenia1().getPassword()));
+                    recuperar.changePassword(recoveryView.getCampo_Correo().getText(),String.valueOf(recoveryView.getCampo_nuevaContrasenia1().getPassword()));
+                    recoveryView.setVisible(false);
+                    recoveryView.reestablecer();
+                    frame.getLoginPanel().setVisible(true);
+                    frame.revalidate();
                 }else{
                     recoveryView.getCampo_nuevaContrasenia1().setBackground(redError);
                     recoveryView.getCampo_nuevaContrasenia2().setBackground(redError);
