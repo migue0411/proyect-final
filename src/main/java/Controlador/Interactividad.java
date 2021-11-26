@@ -129,8 +129,7 @@ public class Interactividad {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(String.valueOf(recoveryView.getCampo_nuevaContrasenia1().getPassword()).equals(String.valueOf(recoveryView.getCampo_nuevaContrasenia2().getPassword()))){
-                    
-                    //se debe implementar un cambio de contraseña en la base de datos
+                    recuperar.changePassword(String.valueOf(recoveryView.getCampo_nuevaContrasenia1().getPassword()));
                 }else{
                     recoveryView.getCampo_nuevaContrasenia1().setBackground(redError);
                     recoveryView.getCampo_nuevaContrasenia2().setBackground(redError);
