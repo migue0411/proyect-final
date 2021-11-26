@@ -48,8 +48,6 @@ public class SingUp extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("* Correo");
 
-        campo_Correo.setText("Correo@gmail.com");
-
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("*Contraseña");
 
@@ -58,10 +56,6 @@ public class SingUp extends javax.swing.JPanel {
 
         lb_errorContraseña.setForeground(new java.awt.Color(255, 102, 102));
         lb_errorContraseña.setText("* Las contraseñas no coinciden, Intentelo de nuevo.");
-
-        campo_Contrasenia.setText("jPasswordField1");
-
-        campo_contrasenia2.setText("jPasswordField2");
 
         bt_CrearCuenta.setText("Crear");
 
