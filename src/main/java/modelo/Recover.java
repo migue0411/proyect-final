@@ -25,8 +25,8 @@ import javax.mail.internet.MimeMessage;
  * @author alexa
  */
 public class Recover {
-    private String correoEmpresa = "correopruebaboda@gmail.com";
-    private String contrasenaCorreoEmpresa = "123456j.";
+    private final String correoEmpresa = "correopruebaboda@gmail.com";
+    private final String contrasenaCorreoEmpresa = "123456j.";
     private String recoveryCode = "";
     
     private boolean checkEmail(String correo){
@@ -63,6 +63,7 @@ public class Recover {
         Session sesion = Session.getDefaultInstance(propiedad);
         String asunto = "Codigo de verificacion";
         String codigo = this.generateCode();
+        this.recoveryCode = codigo;
         MimeMessage mail = new MimeMessage(sesion); 
         try {
             mail.setFrom(new InternetAddress(correoEmpresa));
@@ -93,11 +94,12 @@ public class Recover {
                 }
             }
         }
-        recoveryCode = String.valueOf(codigo);
-        return recoveryCode;
+        return String.valueOf(codigo);
     }
     
     public String getRecoveryCode(){
         return this.recoveryCode;
     }
+    
+    
 }
