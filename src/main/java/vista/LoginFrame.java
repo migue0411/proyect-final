@@ -60,6 +60,8 @@ public class LoginFrame extends javax.swing.JFrame {
 
         bt_ingresar.setText("Ingresar");
 
+        bt_recuperar.setBackground(new java.awt.Color(214, 226, 248));
+        bt_recuperar.setForeground(new java.awt.Color(0, 0, 0));
         bt_recuperar.setText("Recuperar Contraseña");
         bt_recuperar.setBorderPainted(false);
         bt_recuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
