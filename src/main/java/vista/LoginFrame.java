@@ -53,10 +53,12 @@ public class LoginFrame extends javax.swing.JFrame {
         loginPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Usuario:");
+        jLabel1.setText("Correo:");
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña: ");
+
+        campo_Usuario.setInheritsPopupMenu(true);
 
         bt_ingresar.setText("Ingresar");
 
