@@ -28,9 +28,9 @@ public class Recover {
     private final String correoEmpresa = "correopruebaboda@gmail.com";
     private final String contrasenaCorreoEmpresa = "123456j.";
     private String recoveryCode = "";
+    private Connection conexion = SingleConnection.getSingleConnection().getConection();
     
     private boolean checkEmail(String correo){
-        Connection conexion = SingleConnection.getSingleConnection().getConection();
         String SQL = "select * from account where correo=?";
         PreparedStatement statement = null;
         ResultSet resultset = null;
@@ -101,5 +101,8 @@ public class Recover {
         return this.recoveryCode;
     }
     
+    public void changePassword(String password){
+        //se debe actualizar la contraseña de la base de datos en este metodo
+    }
     
 }
