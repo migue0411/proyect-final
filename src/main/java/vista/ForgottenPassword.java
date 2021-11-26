@@ -205,7 +205,17 @@ public class ForgottenPassword extends javax.swing.JPanel {
         return lb_errorCorreo;
     }
     
-   
+   public void reestablecer(){
+       this.campo_Codigo.setText("");
+       this.campo_Correo.setText("");
+       this.campo_nuevaContraseña.setText("");
+       this.campo_nuevaContraseña2.setText("");
+       this.campo_Codigo.setEnabled(false);
+       this.campo_nuevaContraseña.setEnabled(false);
+       this.campo_nuevaContraseña2.setEnabled(false);
+       this.bt_Confirmar.setEnabled(false);
+       this.bt_verificarCodigo.setEnabled(false);
+   }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
