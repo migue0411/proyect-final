@@ -12,6 +12,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -31,6 +33,9 @@ public class Recover {
     private Connection conexion = SingleConnection.getSingleConnection().getConection();
     
     private boolean checkEmail(String correo){
+        if(!this.comprobarCorreo(correo)){
+            return false;//correo incorrecto --> tratar posteriormente en la vista
+        }
         String SQL = "select * from account where correo=?";
         PreparedStatement statement = null;
         ResultSet resultset = null;
@@ -51,8 +56,8 @@ public class Recover {
     }
     
     public boolean sendRecoverCode(String correoDestinatario) throws MessagingException{
-        if(!checkEmail(correoDestinatario)){
-            return false;//el correo no existe, no se puede enviar codigo de recuperacion
+        if(!(checkEmail(correoDestinatario) && this.comprobarCorreo(correoDestinatario))){
+            return false;//el correo no existe, no se puede enviar codigo de recuperacion tratar porteriormente en la vista
         }
         Properties propiedad = new Properties();
         propiedad.setProperty("mail.smtp.host", "smtp.gmail.com");
@@ -100,8 +105,10 @@ public class Recover {
         return this.recoveryCode;
     }
     
-    public void changePassword(String correo,String password){
-        //se debe actualizar la contraseña de la base de datos en este metodo
+    public boolean changePassword(String correo,String password){
+        if(!this.comprobarCorreo(correo)){
+            return false; //comprobar si el correo esta bien escrito 
+        }
         String SQL = "UPDATE account SET password=? WHERE correo=?";
         PreparedStatement statement = null;
         ResultSet resultset = null;
@@ -114,5 +121,15 @@ public class Recover {
         } catch (SQLException ex) {
             Logger.getLogger(Recover.class.getName()).log(Level.SEVERE, null, ex);
         }   
+        return true;
+    }
+    private boolean comprobarCorreo(String correo){
+        boolean valido = false;
+        Pattern patronEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mEmail = patronEmail.matcher(correo.toLowerCase());
+        if(!mEmail.matches()){
+           valido = true;
+        }
+        return valido;
     }
 }
