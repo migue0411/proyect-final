@@ -127,7 +127,7 @@ public class Recover {
         boolean valido = false;
         Pattern patronEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher mEmail = patronEmail.matcher(correo.toLowerCase());
-        if(!mEmail.matches()){
+        if(mEmail.matches()){
            valido = true;
         }
         return valido;
